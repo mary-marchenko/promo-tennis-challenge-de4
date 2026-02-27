@@ -1,0 +1,1594 @@
+@import "../var"
+
+.hide
+  display: none !important
+
+body.light
+  background: $bg-main
+
+body
+  overscroll-behavior: none
+  -webkit-tap-highlight-color: transparent
+  background: $bg-main
+  img
+    max-width: 100%
+    height: auto
+  & > *
+    font-family: inherit
+
+//test
+.menu-btn
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 20
+  width: fit-content
+  background: white
+  padding: 3px
+
+.menu-test
+  position: fixed
+  left: 0
+  top: 25px
+  z-index: 20
+  display: flex
+  gap: 2px
+  flex-direction: column
+  & > button
+    width: fit-content
+    background: white
+    color: black
+    padding: 2px
+    font-family: inherit
+    border-radius: 2px
+
+.tennisChallenge
+  background: $bg-main
+  display: flex
+  flex-direction: column
+  align-items: center
+  overflow: hidden
+  -webkit-tap-highlight-color: transparent
+  &.loading
+    max-height: 90vh
+    overflow: hidden
+
+  ._opacity
+    opacity: 0 !important
+    transition: none !important
+
+  .cont
+    width: 1278px
+    margin: 47px auto
+
+
+  .btn
+    width: fit-content
+    min-width: 197px
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: $font-exo2-semiBold
+    text-transform: uppercase
+    font-size: 18px
+    color: $text-dark
+    padding: 0 5px
+    height: 50px
+    background-color: $accent-cyan
+    border-radius: 6px
+    z-index: 2
+    transition: background .4s ease-in-out
+    animation: pulseScale 3s ease-in-out infinite
+    &:hover
+      cursor: pointer
+      background-color: $accent-cyan-hover
+    &.lock
+      filter: grayscale(100%)
+      pointer-events: none
+      animation: none
+  .infoBtn
+    width: 19.5px
+    height: 19.5px
+    min-width: 19.5px
+    padding: 0
+    border: none
+    background-color: transparent
+    background-image: url("../img/info-green.png")
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: cover
+    cursor: pointer
+    flex-shrink: 0
+    transition: all .2s ease-in-out
+    &:hover
+      transform: scale(1.2)
+  .h2
+    font-family: $font-display-bold
+    color: $text-light
+    font-size: 40px
+    line-height: 37px
+    text-transform: uppercase
+    margin: 0 auto
+  .banner
+    width: 1620px
+    height: 600px
+    display: block
+    position: relative
+    background: url("../img/first/banner-bg-desc.jpg") no-repeat 50% 100%/cover
+    @media screen and (max-width: 1050px)
+      background: url("../img/first/banner-bg-tab.jpg") no-repeat 50% 50%/cover
+    @media screen and (max-width: 600px)
+      background: url("../img/first/banner-bg-mob.jpg") no-repeat 0 0/contain
+      background-size: 100% auto
+    &__wrapp
+      height: 100%
+      position: relative
+      padding: 0 140px 0 167px
+      display: flex
+      justify-content: space-between
+      overflow: hidden
+    &__content
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: center
+      max-width: 372px
+      gap: 30px
+    &__top
+      font-family: $font-display-bold
+      font-size: 70px
+      line-height: 80px
+      text-transform: uppercase
+      color: $text-white
+    &__center
+      white-space: nowrap
+      border-radius: 8px
+      height: 70px
+      margin-top: -5px
+      padding: 18px 20px 12px 20px
+      width: fit-content
+      display: flex
+      justify-content: center
+      align-items: center
+      background-color: $accent-blue
+      font-size: 54px
+      line-height: 100%
+      font-family: $font-text-bold
+      text-transform: uppercase
+      color: $text-white
+      position: relative
+      span
+        margin-right: 12px
+        margin-bottom: -12px
+        display: inline-block
+        color: $text-white
+        font-size: 38px
+        font-family: inherit
+    &__bottom
+      font-family: $font-display-medium
+      font-size: 28px
+      line-height: 36px
+      color: $text-white
+      text-transform: uppercase
+    .decor
+      //width: 992px
+      height: 100%
+      position: relative
+      &__wrap
+        position: relative
+        width: 100%
+        height: 100%
+      &__girl
+        width: 840px
+        animation: levitation 3s ease-in-out infinite
+        will-change: transform
+        backface-visibility: hidden
+      &__ball
+        position: absolute
+        animation: bannerBallFall 1.2s ease-out forwards, bannerBallSpin 5s linear 1.2s infinite
+        &.ball-left
+          width: 83px
+          top: 115px
+          right: 550px
+        &.ball-right
+          width: 100px
+          top: 90px
+          right: -20px
+          animation-delay: .15s, 1.35s
+  .levels
+    margin-top: 110px
+    position: relative
+    &__wrapp
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 23px
+    &__title
+      font-family: $font-display-bold
+      font-size: 40px
+      line-height: 100%
+      color: $text-light
+      span
+        display: inline-block
+        font-family: inherit
+        font-size: 40px
+        color: $accent-cyan
+    &__txt
+      max-width: 700px
+      color: $text-light
+      font-family: $font-exo2-regular
+      font-size: 18px
+      line-height: 25px
+      text-align: center
+    .decor
+      position: absolute
+      left: 0
+      width: 100%
+      &__ball
+        position: absolute
+        width: 100px
+        opacity: 0
+        &.ball-left
+          top: 20px
+          left: -100px
+          transform: rotate(-30deg)
+          animation: decorFlyOutBallLeft 1s ease-in-out forwards
+          animation-delay: .35s
+        &.ball-right
+          top: 250px
+          right: -130px
+          transform: rotate(-20deg)
+          animation: decorFlyOutBallRight 1s ease-in-out forwards
+          animation-delay: .55s
+      &__shutterstock
+        position: absolute
+        width: 120px
+        opacity: 0
+        &.left
+          top: 200px
+          left: -150px
+          animation: decorFlyOutShutterLeft 1s ease-in-out forwards
+          animation-delay: 0s
+        &.right
+          top: 60px
+          right: -90px
+          animation: decorFlyOutShutterRight 1s ease-in-out forwards
+          animation-delay: .15s
+      &.decor-levitate
+        .decor__ball.ball-left
+          opacity: 1
+          animation: decorLevitationBallLeft 3s ease-in-out infinite
+        .decor__ball.ball-right
+          opacity: 1
+          animation: decorLevitationBallRight 3s ease-in-out infinite
+        .decor__shutterstock.left
+          opacity: 1
+          animation: decorLevitationShutter 3s ease-in-out infinite
+        .decor__shutterstock.right
+          opacity: 1
+          animation: decorLevitationShutter 3s ease-in-out infinite
+
+
+    &__cards
+      display: flex
+      gap: 30px
+      justify-content: center
+      margin-top: 60px
+    &__card
+      width: 390px
+      padding: 30px 32px 24px
+      height: 477px
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      background: url("../img/levels/card-bg.png") no-repeat 50% 50%/contain
+      transition: background .5s ease-in-out
+      position: relative
+      &:hover
+        cursor: pointer
+        background: url("../img/levels/card-bg-active.png") no-repeat 50% 50%/contain
+        .levels__card-icon
+          transform: rotate(0deg)
+        .levels__card-title
+          transform: rotate(0deg)
+      &-star
+        width: 125px
+        height: 75px
+        position: absolute
+        top: -35px
+        animation: levelsStarPop 1.5s ease-in-out infinite
+        &._light
+          background: url("../img/levels/star-light.png") no-repeat 50% 50%
+          background-size: auto 100%
+          animation: levelsStarPop 2s ease-in-out infinite
+          animation-delay: 0s
+        &._pro
+          background: url("../img/levels/star-pro.png") no-repeat 50% 50%
+          background-size: auto 100%
+          animation: levelsStarPop 2s ease-in-out infinite
+          animation-delay: .5s
+        &._extreme
+          background: url("../img/levels/star-extreme.png") no-repeat 50% 50%
+          background-size: auto 100%
+          animation: levelsStarPop 2s ease-in-out infinite
+          animation-delay: 1s
+      &-header
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+      &-icon
+        width: 130px
+        height: 145px
+        transition: all .4s ease-in-out
+        transform: rotate(4deg)
+        &._light
+          background: url("../img/levels/level-light.png") no-repeat 50% 50%/contain
+        &._pro
+          background: url("../img/levels/level-pro.png") no-repeat 50% 50%/contain
+        &._extreme
+          background: url("../img/levels/level-extreme.png") no-repeat 50% 50%/contain
+          background-size: auto 88%
+      &-title
+        z-index: 2
+        margin-top: -28px
+        font-size: 52px
+        text-transform: uppercase
+        font-family: $font-display-bold
+        text-shadow: 0 6.01px 18.031px rgba(255, 255, 255, 0.20)
+        background: linear-gradient(147deg, #FFF 32.71%, #9A88F5 88.51%)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        transform: rotate(5deg)
+        transition: all .4s ease-in-out
+      &-reward
+        color: $text-white
+        font-family: $font-text-bold
+        font-size: 28px
+        line-height: 100%
+        text-transform: uppercase
+        padding: 12px 20px 5px 20px
+        background-color: $accent-blue
+        border-radius: 8px
+        z-index: 2
+        height: 46px
+        margin-top: 27px
+        white-space: nowrap
+        span
+          font-size: 20px
+          font-family: inherit
+          color: $text-white
+      &-insurance
+        margin-top: -23px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        width: 334px
+        height: 117px
+        min-height: 117px
+        border-radius: 8px 8px 0 0
+        gap: 8px
+        padding-top: 19px
+        background: url("../img/levels/bi-bg.png") no-repeat 50% 100%/cover
+        @media screen and (max-width: 600px)
+          background: url("../img/levels/bi-bg-mob.png") no-repeat 50% 100%/cover
+      &-bi
+        font-family: $font-exo2-semiBold
+        font-size: 20px
+        color: $accent-cyan
+        letter-spacing: 0.2px
+        span
+          font-family: inherit
+          font-size: 20px
+          color: $accent-cyan
+      &-biPrize
+        font-family: $font-text-bold
+        font-size: 28px
+        color: $text-white
+        text-transform: uppercase
+        span
+          font-size: 20px
+          font-family: inherit
+          color: $text-white
+          text-transform: uppercase
+      &-btn
+        width: 100%
+        animation: none
+        min-height: 50px
+      &-min
+        font-family: $font-exo2-regular
+        font-size: 16px
+        line-height: 100%
+        color: $text-light
+      &-bottom
+        margin-top: 12px
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+      &-popup
+        position: absolute
+        left: 150px
+        top: 100%
+        margin-top: 8px
+        z-index: 20
+        width: 100%
+        max-width: 390px
+        pointer-events: none
+        border: 2px solid $border-popup
+        border-radius: 8px
+        opacity: 0
+        visibility: hidden
+        transition: opacity .2s ease, visibility .2s ease
+        &.is-open
+          pointer-events: auto
+          opacity: 1
+          visibility: visible
+
+  .progress
+    position: relative
+    width: 1920px
+    background: url("../img/progress/progress-bg-desc.jpg") no-repeat 50% -89px
+    background-size: 1920px 525px
+    @media screen and (max-width: 1050px)
+      background: url("../img/progress/progress-bg-tab.jpg") no-repeat 50% 0
+      background-size: 1050px 400px
+    @media screen and (max-width: 600px)
+      background: url("../img/progress/progress-bg-mob.jpg") no-repeat 50% 0/contain
+
+    &:before
+      content: ""
+      position: absolute
+      top: -1px
+      left: 0
+      width: 100%
+      height: 292px
+      background: linear-gradient(180deg, #081720 0%, rgba(8, 23, 32, 0.00) 100%)
+    &:after
+      pointer-events: none
+      user-select: none
+      content: ""
+      position: absolute
+      top: 220px
+      left: 0
+      width: 100%
+      height: 292px
+      background: linear-gradient(0deg, #081720 37.84%, rgba(8, 23, 32, 0.00) 100%)
+    &__wrapp
+      z-index: 2
+      width: 1279px
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin: 54px auto 0
+      gap: 36px
+    &__top
+      z-index: 2
+      width: 100%
+      display: flex
+      justify-content: space-between
+      margin-bottom: 30px
+    &__left
+      display: flex
+      gap: 45px
+      align-items: flex-start
+      .progress__leftMob
+        display: none
+      &-icons
+        position: relative
+        display: flex
+      &-logo
+        width: 160px
+        height: 180px
+      &-stars
+        position: absolute
+        bottom: -23px
+        left: 50%
+        transform: translateX(-50%)
+        width: 125px
+        height: 75px
+      &._light
+        .progress__left-logo
+          background: url("../img/levels/level-light.png") no-repeat 50% 50%/contain
+        .progress__left-stars
+          background: url("../img/levels/star-light.png") no-repeat 50% 50%
+          background-size: auto 100%
+      &._pro
+        .progress__left-logo
+          background: url("../img/levels/level-pro.png") no-repeat 50% 50%/contain
+        .progress__left-stars
+          background: url("../img/levels/star-pro.png") no-repeat 50% 50%
+          background-size: auto 100%
+      &._extreme
+        .progress__left-logo
+          background: url("../img/levels/level-extreme.png") no-repeat 50% 50%/contain
+          background-size: auto 88%
+        .progress__left-stars
+          background: url("../img/levels/star-extreme.png") no-repeat 50% 50%
+          background-size: auto 100%
+      &-info
+        gap: 13px
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+      &-greeting
+        font-family: $font-text-regular
+        color: $text-white
+        font-size: 20px
+        line-height: 100%
+      &-name
+        text-shadow: 0 6.01px 18.031px rgba(255, 255, 255, 0.20)
+        font-family: $font-display-bold
+        font-size: 54px
+        line-height: 44px
+        text-transform: uppercase
+        background: linear-gradient(147deg, #FFF 32.71%, #9A88F5 88.51%)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+      &-prize
+        display: flex
+        align-items: center
+        margin-top: 5px
+        gap: 40px
+      &-reward
+        white-space: nowrap
+        color: $text-white
+        font-family: $font-text-bold
+        font-size: 28px
+        line-height: 100%
+        text-transform: uppercase
+        padding: 11px 20px 5px 20px
+        background-color: $accent-blue
+        border-radius: 8px
+        z-index: 2
+        height: 46px
+        span
+          font-size: 20px
+          font-family: inherit
+          color: $text-white
+      &-insurance
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        position: relative
+        &:before
+          content: "+"
+          display: block
+          position: absolute
+          font-size: 28px
+          font-family: $font-text-bold
+          color: $text-white
+          left: -28px
+      &-bi, &-biPrize
+        font-family: $font-exo2-semiBold
+        line-height: 100%
+        letter-spacing: 0.18px
+        color: $accent-cyan
+        font-size: 18px
+      &-bottom
+        display: flex
+        gap: 8px
+      &-min
+        white-space: nowrap
+        font-family: $font-exo2-regular
+        font-size: 16px
+        color: $text-light
+
+    &__right
+      max-width: 447px
+      display: flex
+      flex-direction: column
+      gap: 30px
+      align-items: flex-start
+      &-title
+        color: $text-white
+        font-size: 32px
+        line-height: 40px
+        text-transform: uppercase
+        font-family: $font-display-bold
+      &-updated
+        width: fit-content
+        color: $text-light
+        font-size: 14px
+        line-height: 100%
+        font-family: $font-exo2-regular
+        border-radius: 4px
+        padding: 8px 14px
+        background-color: $bg-table-head
+        span
+          font-family: inherit
+          color: $text-light
+          font-size: 14px
+    &__bets
+      z-index: 3
+      display: flex
+      gap: 20px
+      width: 100%
+      justify-content: center
+      &._light
+        .progress__bets-item
+          &:nth-child(6), &:nth-child(7)
+            display: none
+      &._pro
+        .progress__bets-item
+          &:nth-child(7)
+            display: none
+
+      &-item
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        padding-top: 25px
+        flex: 1
+        height: 116px
+        transition: all 0.3s ease
+        border: 3px solid rgba(255, 255, 255, 0.40)
+        border-radius: 6px
+        background: url("../img/progress/progress-item.png") no-repeat 0 0/cover
+        opacity: 0
+        animation: progressBetAppear .55s ease-out forwards
+        @for $i from 1 through 7
+          &:nth-child(#{$i})
+            animation-delay: #{0.2 + $i * 0.12}s
+        @media screen and (max-width: 600px)
+          background: url("../img/progress/progress-item-mob.png") no-repeat 0 0/cover
+        .progress__btn
+          position: relative
+          z-index: 1
+        &.you
+          min-width: 0
+          height: 158px
+          background: url("../img/progress/progress-item-active.png") no-repeat 0 0/cover
+          border: 3px solid #09D6D8
+          &:hover
+            transform: scale(1.05)
+            border: 3px solid $accent-cyan
+            background: url("../img/progress/progress-item-hover.png") no-repeat 0 0/cover
+          @media screen and (max-width: 600px)
+            background: url("../img/progress/progress-item-active-mob.png") no-repeat 0 0/cover
+            &:hover
+              background: url("../img/progress/progress-item-hover-mob.png") no-repeat 0 0/cover
+          .progress__bets-status
+            background: url("../img/progress/actual.png") no-repeat 0 0/cover
+          .progress__btn
+            display: flex
+          .progress__btnReal
+            position: absolute
+            content: ""
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+          .progress__bets-number
+            color: $text-white
+          .progress__bets-bet
+            color: $accent-cyan
+        &._fail
+          .progress__bets-number
+            color: $text-white
+          .progress__bets-bet
+            color: $accent-cyan
+          .progress__bets-status
+            background: url("../img/progress/fail.png") no-repeat 50% 50%/contain
+        &._done
+          .progress__bets-number
+            color: $text-white
+          .progress__bets-bet
+            color: $accent-cyan
+          .progress__bets-status
+            background: url("../img/progress/done.png") no-repeat 50% 50%/contain
+      &-status
+        position: absolute
+        top: -19px
+        width: 38px
+        height: 38px
+        background: url("../img/progress/lock.png") no-repeat 50% 50%/contain
+      &-number
+        letter-spacing: 0.8px
+        text-shadow: 0 4px 4px #112D3F
+        font-size: 40px
+        font-family: $font-display-medium
+        text-transform: uppercase
+        color: $bet-lock
+      &-bet
+        letter-spacing: 0.18px
+        text-transform: uppercase
+        font-family: $font-exo2-semiBold
+        font-size: 18px
+        color: $bet-lock
+    &__updated-mob
+      display: none
+    &__txt
+      z-index: 3
+      max-width: 683px
+      font-size: 18px
+      line-height: 22px
+      color: $text-light
+      font-family: $font-exo2-regular
+      text-align: center
+    &__btn
+      min-width: 172px
+      &:not(.btn-join)
+        display: none
+        height: 50px
+        animation: none
+        min-width: 120px
+        width: 100%
+        border-radius: 0
+        background-color: #09D6D8
+        margin-top: auto
+        white-space: nowrap
+        &:hover
+          background-color: $accent-cyan
+    .dropdown
+      margin: 10px auto
+      .spins
+        &-row
+          .no-spins
+            background-color: $bg-table-drop
+            font-size: 17px
+            line-height: 100%
+            font-family: $font-exo2-regular
+            color: $text-white
+            height: 40px
+            display: flex
+            justify-content: center
+            align-items: center
+          &-head
+            display: flex
+            justify-content: space-between
+            padding: 0 20px
+            box-sizing: border-box
+            .content
+              &-date
+                align-items: flex-start
+                width: 100px
+              &-prize
+                align-self: center
+                width: 160px
+                display: flex
+                justify-content: center
+                text-align: center
+              &-status
+                width: 100px
+                text-align: right
+                align-self: flex-end
+          &-scroll
+            padding: 0 10px 0 0
+            max-height: 420px
+            min-height: 0
+            overflow-y: auto
+            scrollbar-width: auto
+            display: flex
+            flex-direction: column
+            gap: 2px
+            &::-webkit-scrollbar
+              width: 2px
+              background: $text-gray
+            &::-webkit-scrollbar-thumb
+              background: $accent-blue
+              width: 2px
+          &-item
+            display: flex
+            justify-content: space-between
+            align-items: center
+            background-color: $bg-table-drop
+            margin-bottom: 0
+            padding: 0 20px
+            border-radius: 5px
+            height: 40px
+            min-height: 40px
+            span
+              margin-bottom: 0
+              font-size: 17px
+              line-height: 100%
+              font-family: $font-exo2-regular
+              color: $text-white
+              &.content-date
+                width: 100px
+              &.content-prize
+                text-align: center
+                width: 160px
+              &.content-status
+                width: 100px
+                height: 24px
+                &._fail
+                  background: url("../img/progress/fail.png") no-repeat 100% 50%/contain
+                &._done
+                  background: url("../img/progress/done.png") no-repeat 100% 50%/contain
+
+
+
+
+
+
+  .reminder
+    height: 400px
+    &__wrapp
+      height: 100%
+      border-radius: 12px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 0 120px 0 70px
+      background: url("../img/reminder/reminder-bg-desc.jpg") no-repeat 50% 50%/cover
+      @media screen and (max-width: 1050px)
+        background: url("../img/reminder/reminder-bg-tab.jpg") no-repeat 50% 50%/contain
+        background-size: 100% auto
+      @media screen and (max-width: 600px)
+        background: url("../img/reminder/reminder-bg-mob.jpg") no-repeat 50% 0/contain
+        background-size: 100% 238px
+    &__left
+      max-width: 350px
+      gap: 30px
+      display: flex
+      flex-direction: column
+    &__title
+      position: relative
+      width: fit-content
+      &-top
+        font-family: $font-display-bold
+        font-size: 32px
+        line-height: 40px
+        text-transform: uppercase
+        color: $text-white
+        span
+          font-family: inherit
+          color: $accent-cyan
+          font-size: 32px
+          line-height: 40px
+      &-btn
+        display: inline-block
+        position: absolute
+        right: 15px
+        bottom: 12px
+    //&__popup
+    //  position: absolute
+    //  left: 40px
+    //  top: 100%
+    //  margin-top: 8px
+    //  z-index: 20
+    //  width: 541px
+    //  border: 2px solid $border-popup
+    //  border-radius: 8px
+    //  pointer-events: none
+    //  opacity: 0
+    //  visibility: hidden
+    //  transition: opacity .2s ease, visibility .2s ease
+    //  &.is-open
+    //    pointer-events: auto
+    //    opacity: 1
+    //    visibility: visible
+    &__timerLabel
+      font-size: 20px
+      line-height: 100%
+      font-family: $font-display-medium
+      color: $text-white
+      text-transform: uppercase
+    &__timer
+      display: flex
+      gap: 32px
+    &__unit
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      gap: 10px
+      position: relative
+      &:not(:last-child)
+        &:after
+          content: ":"
+          position: absolute
+          display: block
+          right: -19px
+          color: $text-white
+          font-size: 28px
+          top: 11%
+    &__value
+      width: 64px
+      height: 50px
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 8px
+      background-color: $bg-table-other
+      color: $text-white
+      font-family: $font-display-medium
+      font-size: 28px
+    &__label
+      color: $text-white
+      opacity: 0.7
+      font-family: $font-text-regular
+      font-size: 14px
+    &__right
+      align-self: flex-end
+      position: relative
+    .decor
+      &__rackets
+        width: 409px
+      &__ball
+        position: absolute
+        width: 100px
+        &.ball-left
+          top: 117px
+          left: 94px
+          animation: decorLevitationBallRight 3s ease-in-out infinite
+        &.ball-right
+          bottom: 60px
+          right: -42px
+          animation: decorLevitationBallRight 2s ease-in-out infinite
+      &__shutterstock
+        position: absolute
+        width: 120px
+        bottom: 60px
+        left: -90px
+        animation: levitation 3s ease-in-out infinite
+        transform: rotate(-80deg)
+
+
+
+  .results
+    display: flex
+    flex-direction: column
+    align-self: center
+    &.cont
+      margin: 20px auto
+    &.h2
+      text-align: center
+      margin-top: 71px
+      text-transform: uppercase
+      font-family: $font-display-bold
+      font-size: 40px
+      color: $text-light
+  .drop
+    margin: auto
+    width: 768px
+  .dropdown
+    margin: 32px auto
+    outline: none!important
+    cursor: pointer
+    position: relative
+    width: 100%
+    max-width: 768px
+    text-align: start
+    &.rules
+      margin: 0 auto 30px
+    summary::-webkit-details-marker
+      display: none
+    > summary
+      list-style: none
+    summary
+      width: 100%
+      font-family: $font-exo2-bold
+      font-size: 18px
+      color: $text-gray
+      padding: 12px 20px 12px 0px
+      outline: none!important
+      position: relative
+      display: flex
+      align-items: center
+      user-select: none
+      border-bottom: 1px solid rgba($border-gray, 0.2)
+      z-index: 1
+      ::-webkit-details-marker
+        display: none
+      &.rules
+        text-transform: uppercase
+      &:after
+        content: ''
+        background: url('../img/arrow-down.svg') no-repeat 50% 50%/cover
+        width: 12px
+        height: 12px
+        position: absolute
+        right: 0px
+        display: block
+    &[open]
+      summary
+        &:after
+          transform: rotate(180deg)
+    .drop-txt
+      width: 100%
+      margin-top: 30px
+      overflow-wrap: break-word
+      text-align: start
+      cursor: auto
+      background-size: 100% 100%
+      &-list
+        padding: 0px 10px 0px 0
+        max-height: 460px
+        min-height: 100px
+        overflow-y: auto
+        scrollbar-width: auto
+        &.my-spins
+          max-height: none
+          min-height: 0
+          overflow: visible
+        &::-webkit-scrollbar
+          width: 2px
+          background: $text-gray
+        &::-webkit-scrollbar-thumb
+          background: $accent-blue
+          width: 2px
+        p, h2, h3, h4, h5, h6, strong, div, span, ul>li, ol>li
+          margin-bottom: 10px
+          font-size: 16px
+          line-height: 22px
+          font-family: $font-text-regular
+          color: $text-gray
+        ul > li
+          padding-left: 20px
+          position: relative
+          &::before
+            position: absolute
+            content: ''
+            width: 4px
+            height: 4px
+            background: $text-gray
+            border-radius: 50%
+            display: inline-block
+            left: 7px
+            top: 8px
+        a
+          color: $text-gray
+          font-family: $font-text-regular
+          text-decoration: underline
+          position: relative
+          &:hover
+            text-decoration: none
+        .retreat1
+          padding-left: 20px
+        .retreat2
+          padding-left: 30px
+        .circle
+          padding-left: 20px
+          &:before
+            content: ''
+            width: 4px
+            height: 4px
+            background: $text-gray
+            border-radius: 50%
+            display: inline-block
+            margin: 0 5px 3px 0
+  .table
+    margin: 32px auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: flex-start
+    width: 100%
+    max-width: 768px
+    min-height: 440px
+    z-index: 1
+    background: $bg-table
+    &__tabs
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 24px
+      &-item
+        height: 45px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        transition: all 0.2s ease
+        border-bottom: 2px solid transparent
+        &:hover
+          .table__tabs-name
+            color: $accent-blue
+        &.active
+          border-color: $accent-blue
+          .table__tabs-name
+            color: $accent-blue
+        &.disabled
+          opacity: 0.8
+          cursor: not-allowed
+          &:hover
+            .table__tabs-name
+              color: $text-white
+      &-name
+        font-size: 14px
+        font-family: $font-roboto-bold
+        color: $text-white
+        background: transparent
+        border-bottom: 2px solid transparent
+        cursor: pointer
+        transition: all 0.2s ease
+        text-transform: uppercase
+      &-date
+        font-family: $font-exo2-regular
+        color: $text-muted
+        font-size: 10px
+    &__head
+      width: 100%
+      background-color: $bg-table-head
+      border-bottom: 1px solid $border-lighter
+      .table__row-item
+        font-family: $font-exo2-regular
+        color: $text-muted
+        font-size: 12px
+        height: 35px
+    &__body
+      width: 100%
+      display: flex
+      flex-direction: column
+      &#tableOther
+        background: $bg-table-other
+
+    &__row
+      padding: 0 10px 0 0
+      display: flex
+      width: 100%
+      align-items: center
+      justify-content: space-between
+      position: relative
+      border-bottom: 1px solid $border-lightest
+      transition: background 0.2s ease
+      &.place1, &.place2, &.place3
+        &.you
+          .you
+            left: 65px
+        .table__row-item
+          &:nth-child(1)
+            &::before
+              position: absolute
+              content: ""
+              display: block
+              width: 20px
+              height: 22px
+              left: 15px
+              @media screen and (max-width: 600px)
+                width: 15px
+                height: 16px
+      &.place1
+        .table__row-item
+          &:nth-child(1)
+            &::before
+              background: url("../img/results/gold.png") no-repeat 0 0/contain
+      &.place2
+        .table__row-item
+          &:nth-child(1)
+            &::before
+              background: url("../img/results/silver.png") no-repeat 0 0/contain
+      &.place3
+        .table__row-item
+          &:nth-child(1)
+            &::before
+              background: url("../img/results/bronze.png") no-repeat 0 0/contain
+      &-item
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        color: $text-gray
+        font-family: $font-exo2-bold
+        font-size: 14px
+        height: 51px
+        &:nth-child(1)
+          width: 100px
+          justify-content: center
+          @media screen and (max-width: 600px)
+            width: 85px
+        &:nth-child(2)
+          width: 100px
+        &:nth-child(3)
+          width: 105px
+          justify-content: center
+          padding-right: 0
+
+      &.you
+        .you
+          position: absolute
+          left: 10px
+          font-family: $font-exo2-bold
+          display: inline-flex
+          align-items: center
+          justify-content: center
+          background: $accent-blue
+          color: $text-white
+          font-size: 14px
+          padding: 4px 3px
+          border-radius: 2px
+          text-transform: uppercase
+          @media screen and (max-width: 600px)
+            padding: 1px 3px 2px
+            left: 4px
+      .place-icon
+        margin-right: 6px
+        width: 16px
+        height: 16px
+        position: absolute
+        left: 20px
+  .note
+    width: 768px
+    margin: 10px auto 50px
+    display: flex
+    justify-content: center
+    text-align: center
+    gap: 20px
+    p
+      font-family: $font-exo2-regular
+      font-size: 12px
+      line-height: 14px
+      color: $text-note
+  .summary-rules
+    summary
+      font-size: 16px
+
+  .popups
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 5
+    width: 100%
+    height: 100%
+    max-height: 100vh
+    background: $bg-popup
+    backdrop-filter: blur(3px)
+    display: flex
+    align-items: center
+    justify-content: center
+    &__item
+      opacity: 0
+      position: absolute
+      pointer-events: none
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      gap: 10px
+      transition: opacity .7s ease
+      width: 540px
+      padding: 16px 16px 24px
+      background-color: $bg-main
+      border-radius: 8px
+      &-close
+        position: relative
+        flex-shrink: 0
+        transition: .3s ease
+        align-self: flex-end
+        width: 24px
+        height: 24px
+        min-width: 24px
+        min-height: 24px
+        cursor: pointer
+        background: url('../img/close.svg') no-repeat 50% 50%/contain
+        filter: brightness(0) invert(1)
+        &::before, &::after
+          content: ''
+          position: absolute
+          left: 50%
+          top: 50%
+          width: 14px
+          height: 2px
+          background: $text-white
+          transform: translate(-50%, -50%) rotate(45deg)
+        &::after
+          transform: translate(-50%, -50%) rotate(-45deg)
+        &:hover
+          transform: scale(1.2)
+          &::before, &::after
+            background: $text-white
+      &-body
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 40px
+      &-content
+        padding: 16px
+        font-family: $font-exo2-regular
+        font-size: 16px
+        line-height: 27px
+        color: $text-white
+        border: 2px solid #1E5173
+        border-radius: 8px
+        p
+          margin: 0 0 10px
+        ol
+          margin: 0 0 18px
+          padding-left: 18px
+        li
+          margin-bottom: 4px
+    &._opacity
+      pointer-events: none
+    &._levelLight
+      ._levelLight
+        opacity: 1
+        position: relative
+        pointer-events: initial
+    &._levelPro
+      ._levelPro
+        opacity: 1
+        position: relative
+        pointer-events: initial
+    &._levelExtreme
+      ._levelExtreme
+        opacity: 1
+        position: relative
+        pointer-events: initial
+    &._reminderInfo
+      ._reminderInfo
+        opacity: 1
+        position: relative
+        pointer-events: initial
+
+
+// iOS custom scrollbar
+.ios-scrollbar-track
+  position: absolute
+  top: 0
+  right: 0
+  width: 2px
+  height: 100%
+  background: $text-gray
+  z-index: 10
+  pointer-events: none
+
+.ios-scrollbar-thumb
+  width: 2px
+  background: $accent-blue
+  border-radius: 1px
+  position: absolute
+  top: 0
+  right: 0
+
+// Hide native scrollbar on iOS when custom scrollbar is active
+.drop-txt-list[data-ios-scrollbar="true"],
+.spins-row-scroll[data-ios-scrollbar="true"]
+  scrollbar-width: none
+  -ms-overflow-style: none
+  &::-webkit-scrollbar
+    display: none
+    width: 0
+    height: 0
+
+
+
+//content styles
+.retreat1
+  padding-left: 20px
+  strong
+    font-family: $font-exo2-bold
+    color: $text-white
+  p
+    //&:not(:last-child)
+    padding-bottom: 15px
+
+.retreat2
+  padding-left: 40px
+  strong
+    font-family: $font-exo2-bold
+    color: $text-white
+  p
+    //&:not(:last-child)
+    padding-bottom: 15px
+
+
+.circle
+  padding-left: 20px
+  &:before
+    content: ''
+    width: 5px
+    height: 5px
+    background: $text-white
+    border-radius: 50%
+    display: inline-block
+    margin: 0 8px 3px 0
+
+@media screen and (max-width: 600px)
+  .circle
+    padding-left: 15px
+  .retreat1
+    padding-left: 15px
+  .retreat2
+    padding-left: 30px
+
+// loader
+
+.spinner-overlay
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100vh
+  background-color: $bg-main
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 8
+
+.spinner
+  width: 60px
+  height: 60px
+  background: url("../img/loader.svg") no-repeat 0 0/contain
+  animation: scale .7s alternate infinite
+
+@keyframes scale
+  0%
+    transform: scale(.8)
+  100%
+    transform: scale(1)
+
+@keyframes pulseScale
+  0%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+  100%
+    transform: scale(1)
+
+@keyframes levitation
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(-12px)
+  100%
+    transform: translateY(0)
+
+@keyframes bannerBallFall
+  0%
+    transform: translateY(-120px)
+  100%
+    transform: translateY(0)
+
+@keyframes bannerBallSpin
+  0%
+    transform: translateY(0) rotate(0deg)
+  100%
+    transform: translateY(0) rotate(360deg)
+
+@keyframes progressBetAppear
+  0%
+    opacity: 0
+    transform: scale(0.92) translateY(8px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+@keyframes decorFlyOutBallLeft
+  0%
+    transform: rotate(-30deg) translateX(150px) translateY(20px)
+    opacity: 0
+  100%
+    transform: rotate(-30deg) translateX(0) translateY(0)
+    opacity: 1
+
+@keyframes decorFlyOutBallRight
+  0%
+    transform: rotate(-20deg) translateX(-150px) translateY(20px)
+    opacity: 0
+  100%
+    transform: rotate(-20deg) translateX(0) translateY(0)
+    opacity: 1
+
+@keyframes decorFlyOutShutterLeft
+  0%
+    transform: translateX(150px) translateY(20px)
+    opacity: 0
+  100%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+
+@keyframes decorFlyOutShutterRight
+  0%
+    transform: translateX(-150px) translateY(20px)
+    opacity: 0
+  100%
+    transform: translateX(0) translateY(0)
+    opacity: 1
+
+// Levels decor: levitation (after fly-out)
+@keyframes decorLevitationBallLeft
+  0%, 100%
+    transform: rotate(-30deg) translateY(0)
+  50%
+    transform: rotate(-30deg) translateY(-12px)
+
+@keyframes decorLevitationBallRight
+  0%, 100%
+    transform: rotate(-20deg) translateY(0)
+  50%
+    transform: rotate(-20deg) translateY(-12px)
+
+@keyframes decorLevitationShutter
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(-12px)
+
+@keyframes levelsStarPop
+  0%, 25%, 100%
+    transform: scale(1)
+    opacity: 1
+  12%
+    transform: scale(1.18)
+    opacity: .75
+
+@keyframes levelsStarPopMob
+  0%, 25%, 100%
+    transform: translateX(-50%) scale(1)
+    opacity: 1
+  12%
+    transform: translateX(-50%) scale(1.18)
+    opacity: .75
+
+// iOS custom scrollbar
+.ios-scrollbar-track
+  position: absolute
+  top: 0
+  right: 0
+  width: 2px
+  height: 100%
+  background: $text-gray
+  z-index: 10
+  pointer-events: none
+
+.ios-scrollbar-thumb
+  width: 2px
+  background: $accent-blue
+  border-radius: 1px
+  position: absolute
+  top: 0
+  right: 0
+
+// Hide native scrollbar on iOS when custom scrollbar is active
+.drop-txt-list[data-ios-scrollbar="true"],
+.spins-row-scroll[data-ios-scrollbar="true"]
+  scrollbar-width: none
+  -ms-overflow-style: none
+  &::-webkit-scrollbar
+    display: none
+    width: 0
+    height: 0
+
+
+// Таблиця в дропдауні «Історія зарахованих ставок» — той самий формат і стилі, що в «Результати»
+.tennisChallenge .drop .table--history
+  margin: 0
+  min-height: 0
+  border-radius: 8px
+  overflow: hidden
+  .table__head .table__row-item
+    &:nth-child(1)
+      width: 70px
+      justify-content: flex-start
+    &:nth-child(2)
+      flex: 1
+      justify-content: flex-start
+    &:nth-child(3)
+      width: 60px
+      justify-content: center
+  .table__body--history .table__row .table__row-item
+    &:nth-child(1)
+      width: 70px
+      justify-content: flex-start
+    &:nth-child(2)
+      flex: 1
+      justify-content: flex-start
+    &:nth-child(3)
+      width: 60px
+      justify-content: center
+  .table__row-item--status
+    &::after
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      font-size: 12px
+      color: $text-white
+    &.table__row-item--success::after
+      content: '✓'
+      background: #2ecc71
+    &.table__row-item--fail::after
+      content: '✕'
+      background: #e74c3c

@@ -1,0 +1,439 @@
+button.menu-btn menu
+.menu-test
+    button.easy-btn easy
+    button.medium-btn medium
+    button.hight-btn hight
+    //button.lng-btn en
+    //button.auth-btn auth
+    //button.rate-btn rate
+//.tennisChallenge.loading
+.tennisChallenge
+    //.spinner-overlay
+    //    .spinner
+    .banner
+        .banner__wrapp
+            .banner__content
+                h1.banner__top(data-translate="bannerTitleTop") Тенісний виклик
+                .banner__center(data-translate="bannerTitleCenter") #[span до] 40 000 ₴
+                .banner__bottom(data-translate="bannerTitleBottom") + Бонус у вигляді #[br] «Страховка ставки»*
+                a.banner__btn.btn.unauth-msg(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_banner") Авторизуватись
+                button.banner__btn.btn.part-btn.hide.toChose(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_banner")
+                a.banner__btn.btn.btn-join.hide(data-translate="mainBtn" href="#" data-promo="tennisChallenge_050326" data-button="placeBet_banner") До гри
+            .decor
+                .decor__wrap
+                    .decor__girl
+                        picture
+                            source(media="(max-width: 600px)" srcset="img/first/person-mob.png")
+                            source(media="(max-width: 1050px)" srcset="img/first/person-tab.png")
+                            img(src="img/first/person-desc.png" alt="person")
+                    .decor__ball.ball-left
+                        img(src="img/ball-l.png" alt="ball")
+                    .decor__ball.ball-right
+                        img(src="img/ball-r.png" alt="ball")
+
+    .levels.cont
+        .levels__wrapp
+            h2.levels__title(data-translate="levelsTitle") #[span 3 02.03 ДО 29.03.2026] ОБИРАЙ РІВЕНЬ СКЛАДНОСТІ
+            .levels__txt(data-translate="levelsText") Та роби від 3-х до 7 виграшних ставок поспіль (виключно типу «Ординар») на будь-які актуальні тенісні події з розділів «Спорт» та «LIVE» і отримай свій бонус.
+            .decor
+                .decor__ball.ball-left
+                    img(src="img/ball-r.png" alt="ball")
+                .decor__shutterstock.left
+                    img(src="img/shutterstock-l.png" alt="shutterstock")
+                .decor__ball.ball-right
+                    img(src="img/ball-r.png" alt="ball")
+                .decor__shutterstock.right
+                    img(src="img/shutterstock-r.png" alt="shutterstock")
+
+
+            .levels__cards
+                //light
+                .levels__card._light
+                    .levels__card-star._light
+                    .levels__card-header
+                        .levels__card-icon._light
+                        .levels__card-title(data-translate="levelLite") ЛАЙТ
+                    .levels__card-reward(data-translate="rewardLite") #[span до] 5 000 ₴
+                    .levels__card-insurance
+                        .levels__card-bi + #[span(data-translate="bi") Страховка Ставки]
+                        .levels__card-biPrize(data-translate="biLight") #[span до] 600 ₴
+                    a.levels__card-btn.btn.unauth-msg.hide(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_card")
+                    button.levels__card-btn.btn.part-btn(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
+                    .levels__card-bottom
+                        .levels__card-min(data-translate="minBetLight") Мінімальна ставка: від 300 ₴
+                        button.levels__card-infoBtn._light.infoBtn(data-popup="levelLight")
+                //pro
+                .levels__card._pro
+                    .levels__card-star._pro
+                    .levels__card-header
+                        .levels__card-icon._pro
+                        .levels__card-title(data-translate="levelPro") ПРО
+                    .levels__card-reward(data-translate="rewardPro") #[span до] 10 000 ₴
+                    .levels__card-insurance
+                        .levels__card-bi + #[span(data-translate="bi") Страховка Ставки]
+                        .levels__card-biPrize(data-translate="biPro") #[span до] 1300 ₴
+                    a.levels__card-btn.btn.unauth-msg.hide(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_card")
+                    button.levels__card-btn.btn.part-btn(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
+                    .levels__card-bottom
+                        .levels__card-min(data-translate="minBetPro") Мінімальна ставка: від 500 ₴
+                        button.levels__card-infoBtn._pro.infoBtn(data-popup="levelPro")
+                //extreme
+                .levels__card._extreme
+                    .levels__card-star._extreme
+                    .levels__card-header
+                        .levels__card-icon._extreme
+                        .levels__card-title(data-translate="levelExtreme") ЕКСТРИМ
+                    .levels__card-reward(data-translate="rewardExtreme") #[span до] 25 000 ₴
+                    .levels__card-insurance
+                        .levels__card-bi + #[span(data-translate="bi") Страховка Ставки]
+                        .levels__card-biPrize(data-translate="biExtreme") #[span до] 3 500 ₴
+                    a.levels__card-btn.btn.unauth-msg.hide(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_card")
+                    button.levels__card-btn.btn.part-btn(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
+                    .levels__card-bottom
+                        .levels__card-min(data-translate="minBetExtreme") Мінімальна ставка: від 1000 ₴
+                        button.levels__card-infoBtn._extreme.infoBtn(data-popup="levelExtreme")
+
+
+
+    .progress.hide
+        .progress__wrapp
+            .progress__top
+                //light
+                .progress__left._light.hide
+                    .progress__left-icons
+                        .progress__left-logo
+                        .progress__left-stars
+                    .progress__left-info
+                        .progress__left-greeting(data-translate="welcomeChose") Вітаємо, ти обрав
+                        .progress__left-name(data-translate="levelLite") лайт
+                        .progress__left-prize
+                            .progress__left-reward(data-translate="rewardLite") #[span до] 5 000 ₴
+                            .progress__left-insurance
+                                .progress__left-bi(data-translate="bi") Страховка Ставки
+                                .progress__left-biPrize(data-translate="biLight") до 600 ₴
+                        .progress__left-bottom
+                            .progress__left-min(data-translate="minBetLight") Мінімальна ставка: від 1000 ₴
+                            button.progress__left-infoBtn.infoBtn._light(data-popup="levelLight")
+                //pro
+                .progress__left._pro.hide
+                    .progress__left-icons
+                        .progress__left-logo
+                        .progress__left-stars
+                    .progress__left-info
+                        .progress__left-greeting(data-translate="welcomeChose") Вітаємо, ти обрав
+                        .progress__left-name(data-translate="levelPro") ПРО
+                        .progress__left-prize
+                            .progress__left-reward(data-translate="rewardPro") #[span до] 10 000 ₴
+                            .progress__left-insurance
+                                .progress__left-bi(data-translate="bi") Страховка Ставки
+                                .progress__left-biPrize(data-translate="biPro") до 1300 ₴
+                        .progress__left-bottom
+                            .progress__left-min(data-translate="minBetPro") Мінімальна ставка: від 500 ₴
+                            button.progress__left-infoBtn.infoBtn._pro(data-popup="levelPro")
+                //extreme
+                .progress__left._extreme.hide
+                    //.progress__leftMob
+                    .progress__left-icons
+                        .progress__left-logo
+                        .progress__left-stars
+                    .progress__left-info
+                        .progress__left-greeting(data-translate="welcomeChose") Вітаємо, ти обрав
+                        .progress__left-name(data-translate="levelExtreme") ЕКСТРИМ
+                        .progress__left-prize
+                            .progress__left-reward(data-translate="rewardExtreme") #[span до] 25 000 ₴
+                            .progress__left-insurance
+                                .progress__left-bi(data-translate="bi") Страховка Ставки
+                                .progress__left-biPrize(data-translate="biExtreme") до 3 500 ₴
+                    .progress__left-bottom
+                        .progress__left-min(data-translate="minBetExtreme") Мінімальна ставка: від 1000 ₴
+                        button.progress__left-infoBtn.infoBtn._extreme(data-popup="levelExtreme")
+                .progress__right
+                    .progress__right-title(data-translate="progressHeadline") БІЛЬШЕ ВИГРАШНИХ СТАВОК ПОСПІЛЬ – БІЛЬШЕ БОНУС «СТРАХОВКА СТАВКИ»
+                    .progress__right-updated(data-translate="scaleUpdated") Твоя шкала оновилась: #[span.upd 21.01 16:30]
+            .progress__bets._extreme
+                .progress__bets-item._fail
+                    .progress__bets-status
+                    .progress__bets-number 01
+                    .progress__bets-bet(data-translate="bet") Ставка
+                    a.progress__btnReal.btn-join(href="#")
+                    .progress__btn.btn(data-translate="mainBtn") До гри
+                .progress__bets-item._done
+                    .progress__bets-status
+                    .progress__bets-number 02
+                    .progress__bets-bet(data-translate="bet") Ставка
+                    a.progress__btnReal.btn-join(href="#")
+                    .progress__btn.btn(data-translate="mainBtn") До гри
+                .progress__bets-item._done
+                    .progress__bets-status
+                    .progress__bets-number 03
+                    .progress__bets-bet(data-translate="bet") Ставка
+                    a.progress__btnReal.btn-join(href="#")
+                    .progress__btn.btn(data-translate="mainBtn") До гри
+                .progress__bets-item.you
+                    .progress__bets-status
+                    .progress__bets-number 04
+                    .progress__bets-bet(data-translate="bet") Ставка
+                    a.progress__btnReal.btn-join(href="#")
+                    .progress__btn.btn(data-translate="mainBtn") До гри
+                .progress__bets-item
+                    .progress__bets-status
+                    .progress__bets-number 05
+                    .progress__bets-bet(data-translate="bet") Ставка
+                    a.progress__btnReal.btn-join(href="#")
+                    .progress__btn.btn(data-translate="mainBtn") До гри
+                .progress__bets-item
+                    .progress__bets-status
+                    .progress__bets-number 06
+                    .progress__bets-bet(data-translate="bet") Ставка
+                    a.progress__btnReal.btn-join(href="#")
+                    .progress__btn.btn(data-translate="mainBtn") До гри
+                .progress__bets-item
+                    .progress__bets-status
+                    .progress__bets-number 07
+                    .progress__bets-bet(data-translate="bet") Ставка
+                    a.progress__btnReal.btn-join(href="#")
+                    .progress__btn.btn(data-translate="mainBtn") До гри
+
+            .progress__updated-mob(data-translate="scaleUpdated") Твоя шкала оновилась: #[span.upd 21.01 16:30]
+            .progress__txt(data-translate="levelsText") Роби від 3-х до 7 виграшних ставок поспіль (виключно типу «Ординар») на будь-які актуальні тенісні події з розділів «Спорт» та «LIVE» і отримай свій бонус.
+            a.progress__btn.btn.btn-join(data-translate="mainBtn" href="#") До гри
+
+            .drop
+                details.progress__drop.dropdown
+                    summary(data-translate="detailsSummary") Історія зарахованих ставок
+                    .drop-txt
+                        .drop-txt
+                            .drop-txt-list.my-spins
+                                .spins-row
+                                    .spins-row-head
+                                        .content-date(data-translate="myBetDate") Дата
+                                        .content-prize(data-translate="myBetPrize") Ставка
+                                        .content-status(data-translate="myBetStatus") Статус
+                                    .spins-row-scroll
+                                        .no-spins.hide(data-translate="noBets") Ставки відсутні
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._fail
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._fail
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._fail
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._fail
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._fail
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+                                        .spins-row-item
+                                            span.content-date 20.02
+                                            span.content-prize ID: 388310247
+                                            span.content-status._done
+
+
+    .reminder.cont
+        .reminder__wrapp
+            .reminder__left
+                .reminder__title
+                    .reminder__title-top(data-translate="reminderTitle") #[span ПАМ'ЯТАЙ] В ТЕБЕ ОДНЕ ПРАВО НА ПОМИЛКУ
+                    .reminder__title-btn.infoBtn(data-popup="reminderInfo")
+                a.reminder__btn.btn.unauth-msg(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_banner") Авторизуватись
+                button.reminder__btn.btn.part-btn.toChose.hide(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_banner") Обрати
+                a.reminder__btn.btn.btn-join.hide(data-translate="mainBtn" href="#" data-promo="tennisChallenge_050326" data-button="placeBet_banner") До гри
+                .reminder__timerLabel(data-translate="timerLabel") ДО КІНЦЯ АКЦІЇ ЗАЛИШИЛОСЬ
+                .reminder__timer
+                    .reminder__unit
+                        .reminder__value#timer-days 08
+                        .reminder__label(data-translate="days") Днів
+                    .reminder__unit
+                        .reminder__value#timer-hours 20
+                        .reminder__label(data-translate="hours") Годин
+                    .reminder__unit
+                        .reminder__value#timer-minutes 06
+                        .reminder__label(data-translate="minutes") Хвилин
+                    .reminder__unit
+                        .reminder__value#timer-seconds 44
+                        .reminder__label(data-translate="seconds") Секунд
+            .reminder__right
+                .decor
+                    .decor__wrap
+                        .decor__rackets
+                            picture
+                                source(media="(max-width: 600px)" srcset="img/reminder/rackets-mob.png")
+                                source(media="(max-width: 1050px)" srcset="img/reminder/rackets-tab.png")
+                                img(src="img/reminder/rackets-desc.png" alt="rackets")
+                        .decor__ball.ball-left
+                            img(src="img/ball-r.png" alt="ball")
+                        .decor__ball.ball-right
+                            img(src="img/ball-r.png" alt="ball")
+                        .decor__shutterstock
+                            img(src="img/shutterstock-r.png" alt="shutterstock")
+
+
+
+    .results.cont.hide
+        h2.h2.results__title(data-translate="resultsTitle") Результати
+        .table
+            .table__head
+                .table__row
+                    .table__row-item(data-translate="tablePlace") Місце
+                    .table__row-item(data-translate="tablePlayerId") ID гравця
+                    .table__row-item(data-translate="tableBets") Виграшні ставки
+            .table__body#table
+                .table__row.place1
+                    .table__row-item 1
+                    .table__row-item 4538***
+                    .table__row-item 10
+                .table__row.place1
+                    .table__row-item 2
+                    .table__row-item 4538***
+                    .table__row-item 5
+                .table__row.place1
+                    .table__row-item 3
+                    .table__row-item 4538***
+                    .table__row-item 4
+                .table__row.place1
+                    .table__row-item 4
+                    .table__row-item 4538***
+                    .table__row-item 28
+                .table__row.place1
+                    .table__row-item 5
+                    .table__row-item 4538***
+                    .table__row-item 2800
+                .table__row
+                    .table__row-item 6
+                    .table__row-item 4538***
+                    .table__row-item 28
+                .table__row
+                    .table__row-item 7
+                    .table__row-item 4538***
+                    .table__row-item 28
+                .table__row
+                    .table__row-item 8
+                    .table__row-item 4538***
+                    .table__row-item 28
+                .table__row
+                    .table__row-item 9
+                    .table__row-item 4538***
+                    .table__row-item 28
+                .table__row
+                    .table__row-item 10
+                    .table__row-item 4538***
+                    .table__row-item 28
+            .table__body#tableOther
+                .table__row
+                    .table__row-item 12
+                    .table__row-item 4538***
+                    .table__row-item 20
+                .table__row.you
+                    .table__row-item 13
+                        span.you(data-translate="you") ти
+                    .table__row-item 4538***
+                    .table__row-item 2
+                .table__row
+                    .table__row-item 14
+                    .table__row-item 4538***
+                    .table__row-item 20
+
+
+    .drop
+        details.dropdown.summary-rules.rules
+            summary(data-translate="rulesDetails").rules Офіційні правила
+            .drop-txt
+                .drop-txt-list(data-translate="rulesDetailsList")
+                    p *Загальний призовий фонд акції «Тенісний виклик» складається з 40 000 електронних грошових замінників та призів у вигляді бонусної пропозиції «Страховка Ставки», вид та розмір якої визначаєт
+                    p Загальний призовий фонд акції «Тенісний виклик» складається з 40 000 електронних грошових замінників та призів у вигляді бонусної пропозиції «Страховка Ставки», вид та розмір якої визначаєт
+                    p *Загальний призовий фонд акції «Тенісний виклик» складається з 40 000 електронних грошових замінників та призів у вигляді бонусної пропозиції «Страховка Ставки», вид та розмір якої визначаєт
+                    p Загальний призовий фонд акції «Тенісний виклик» складається з 40 000 електронних грошових замінників та призів у вигляді бонусної пропозиції «Страховка Ставки», вид та розмір якої визначаєт
+
+
+
+    .note
+        p.note__top(data-translate="noteTop") *Загальний призовий фонд акції «Тенісний виклик» складається з 40 000 електронних грошових замінників та призів у вигляді бонусної пропозиції «Страховка Ставки», вид та розмір якої визначається виключно на розсуд Організатора та доступна в межах діючої Програми лояльності. Період дії акції з 02.03.2026 по 29.03.2026 року.
+
+    .popups._opacity
+        .popups__item._levelLight.popup(data-popup="levelLight")
+            .popups__item-close
+            .popups__item-body
+                .popups__item-content(data-translate="popupLight")
+                    p levelLight 1. Роби від 3х до 7 виграшних ставок поспіль (виключно типу «Ординар») на тенісні події розділів «Спорт» та «LIVE».
+                    p Вимоги до ставок на рівні «Лайт»:
+                    ol
+                        li Мінімальна ставка від 300 ₴.
+                        li Коефіцієнт від 1.6.
+                        li Враховується одна ставка в рамках однієї події. Розрахунок починається з першої виграшної ставки.
+                        li Перші 20 гравців, які зробили найбільшу кількість виграшних ставок в кінці акції мають можливість розділити призовий фонд.
+                    p 2. Чим більше виграшних ставок поспіль, тим більше бонус «Страховка ставки». Деталі в офіційних правилах.
+
+        .popups__item._levelPro.popup(data-popup="levelPro")
+            .popups__item-close
+            .popups__item-body
+                .popups__item-content(data-translate="popupPro")
+                    p levelPro 1. Роби від 3х до 7 виграшних ставок поспіль (виключно типу «Ординар») на тенісні події розділів «Спорт» та «LIVE».
+                    p Вимоги до ставок на рівні «ПРО»:
+                    ol
+                        li Мінімальна ставка від 500 ₴.
+                        li Коефіцієнт від 1.6.
+                        li Враховується одна ставка в рамках однієї події. Розрахунок починається з першої виграшної ставки.
+                        li Перші 20 гравців, які зробили найбільшу кількість виграшних ставок в кінці акції мають можливість розділити призовий фонд.
+                    p 2. Чим більше виграшних ставок поспіль, тим більше бонус «Страховка ставки». Деталі в офіційних правилах.
+
+        .popups__item._levelExtreme.popup(data-popup="levelExtreme")
+            .popups__item-close
+            .popups__item-body
+                .popups__item-content(data-translate="popupExtreme")
+                    p levelExtreme 1. Роби від 3х до 7 виграшних ставок поспіль (виключно типу «Ординар») на тенісні події розділів «Спорт» та «LIVE».
+                    p Вимоги до ставок на рівні «Екстрим»:
+                    ol
+                        li Мінімальна ставка від 1000 ₴.
+                        li Коефіцієнт від 1.6.
+                        li Враховується одна ставка в рамках однієї події. Розрахунок починається з першої виграшної ставки.
+                        li Перші 20 гравців, які зробили найбільшу кількість виграшних ставок в кінці акції мають можливість розділити призовий фонд.
+                    p 2. Чим більше виграшних ставок поспіль, тим більше бонус «Страховка ставки». Деталі в офіційних правилах.
+
+        .popups__item._reminderInfo.popup(data-popup="reminderInfo")
+            .popups__item-close
+            .popups__item-body
+                .popups__item-content(data-translate="reminderInfo")
+                    p reminderInfo 1. Роби від 3х до 10 виграшних ставок поспіль (виключно типу «Ординар») на футбольні події розділів «Спорт» та «LIVE».
+                    p Вимоги до ставок на рівні «Новачок»:
+                    ol
+                        li Мінімальна ставка від 150 ₴.
+                        li Коефіцієнт від 1.6.
+                        li Враховується одна ставка в рамках однієї події. Розрахунок починається з першої виграшної ставки.
+                        li Перші 20 гравців, які зробили найбільшу кількість виграшних ставок в кінці акції мають можливість розділити призовий фонд в розмірі 50 000 ₴.
+                    p 2. Чим більше виграшних ставок поспіль, тим більше бонус «Страховка ставки». Деталі в офіційних правилах.

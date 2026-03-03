@@ -570,6 +570,7 @@
           width: fit-content
         &-min
           width: 90%
+          margin-left: 13px
         &-star
           left: 32%
           animation: levelsStarPopMob 2s ease-in-out backwards infinite
@@ -579,9 +580,10 @@
           animation-delay: 0.5s
         &._extreme &-star
           animation-delay: 1s
+        &-reward
+          padding: 8px 15px 3px 15px
         &-btn
           width: 96%
-
     .progress
       &:before
         display: none
@@ -824,9 +826,12 @@
       &__title
         font-size: 21px
         line-height: 30px
+        max-width: 300px
         span
           font-size: 22px
           line-height: 30px
+      &__txt
+        max-width: 300px
       &__cards
         width: 100%
       &__card
@@ -854,6 +859,8 @@
         max-width: 310px
       &__updated-mob
         max-width: 310px
+    .reminder
+      height: 537px
     .drop, .note
       width: 310px
 

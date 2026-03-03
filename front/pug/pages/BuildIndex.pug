@@ -1,15 +1,16 @@
 button.menu-btn menu
 .menu-test
-    button.easy-btn easy
-    button.medium-btn medium
-    button.hight-btn hight
-    //button.lng-btn en
-    //button.auth-btn auth
+    button.easy-btn light
+    button.medium-btn pro
+    button.extreme-btn extreme
+    button.with-spins-btn with spins
+    button.lng-btn en
+    button.auth-btn auth
     //button.rate-btn rate
-//.tennisChallenge.loading
+.tennisChallenge.loading#tennis-challenge
 .tennisChallenge
-    //.spinner-overlay
-    //    .spinner
+    .spinner-overlay
+        .spinner
     .banner
         .banner__wrapp
             .banner__content
@@ -31,7 +32,7 @@ button.menu-btn menu
                     .decor__ball.ball-right
                         img(src="img/ball-r.png" alt="ball")
 
-    .levels.cont
+    .levels.cont#chose
         .levels__wrapp
             h2.levels__title(data-translate="levelsTitle") #[span 3 02.03 ДО 29.03.2026] ОБИРАЙ РІВЕНЬ СКЛАДНОСТІ
             .levels__txt(data-translate="levelsText") Та роби від 3-х до 7 виграшних ставок поспіль (виключно типу «Ординар») на будь-які актуальні тенісні події з розділів «Спорт» та «LIVE» і отримай свій бонус.
@@ -58,10 +59,10 @@ button.menu-btn menu
                         .levels__card-bi + #[span(data-translate="bi") Страховка Ставки]
                         .levels__card-biPrize(data-translate="biLight") #[span до] 600 ₴
                     a.levels__card-btn.btn.unauth-msg.hide(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_card")
-                    button.levels__card-btn.btn.part-btn(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
+                    button.levels__card-btn.btn.part-btn(data-translate="chooseBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
                     .levels__card-bottom
                         .levels__card-min(data-translate="minBetLight") Мінімальна ставка: від 300 ₴
-                        button.levels__card-infoBtn._light.infoBtn(data-popup="levelLight")
+                        button.levels__card-infoBtn._light.infoBtn.info-icon.hide(data-popup="levelLight")
                 //pro
                 .levels__card._pro
                     .levels__card-star._pro
@@ -73,10 +74,10 @@ button.menu-btn menu
                         .levels__card-bi + #[span(data-translate="bi") Страховка Ставки]
                         .levels__card-biPrize(data-translate="biPro") #[span до] 1300 ₴
                     a.levels__card-btn.btn.unauth-msg.hide(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_card")
-                    button.levels__card-btn.btn.part-btn(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
+                    button.levels__card-btn.btn.part-btn(data-translate="chooseBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
                     .levels__card-bottom
                         .levels__card-min(data-translate="minBetPro") Мінімальна ставка: від 500 ₴
-                        button.levels__card-infoBtn._pro.infoBtn(data-popup="levelPro")
+                        button.levels__card-infoBtn._pro.infoBtn.info-icon.hide(data-popup="levelPro")
                 //extreme
                 .levels__card._extreme
                     .levels__card-star._extreme
@@ -88,10 +89,10 @@ button.menu-btn menu
                         .levels__card-bi + #[span(data-translate="bi") Страховка Ставки]
                         .levels__card-biPrize(data-translate="biExtreme") #[span до] 3 500 ₴
                     a.levels__card-btn.btn.unauth-msg.hide(data-translate="signBtn" href="/login/" data-promo="tennisChallenge_050326" data-button="authorization_card")
-                    button.levels__card-btn.btn.part-btn(data-translate="partBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
+                    button.levels__card-btn.btn.part-btn(data-translate="chooseBtn" data-promo="tennisChallenge_050326" data-button="takePart_card") Обрати
                     .levels__card-bottom
                         .levels__card-min(data-translate="minBetExtreme") Мінімальна ставка: від 1000 ₴
-                        button.levels__card-infoBtn._extreme.infoBtn(data-popup="levelExtreme")
+                        button.levels__card-infoBtn._extreme.infoBtn.info-icon.hide(data-popup="levelExtreme")
 
 
 
@@ -113,7 +114,7 @@ button.menu-btn menu
                                 .progress__left-biPrize(data-translate="biLight") до 600 ₴
                         .progress__left-bottom
                             .progress__left-min(data-translate="minBetLight") Мінімальна ставка: від 1000 ₴
-                            button.progress__left-infoBtn.infoBtn._light(data-popup="levelLight")
+                            button.progress__left-infoBtn.infoBtn.info-icon._light.hide(data-popup="levelLight")
                 //pro
                 .progress__left._pro.hide
                     .progress__left-icons
@@ -129,10 +130,9 @@ button.menu-btn menu
                                 .progress__left-biPrize(data-translate="biPro") до 1300 ₴
                         .progress__left-bottom
                             .progress__left-min(data-translate="minBetPro") Мінімальна ставка: від 500 ₴
-                            button.progress__left-infoBtn.infoBtn._pro(data-popup="levelPro")
+                            button.progress__left-infoBtn.infoBtn.info-icon._pro.hide(data-popup="levelPro")
                 //extreme
                 .progress__left._extreme.hide
-                    //.progress__leftMob
                     .progress__left-icons
                         .progress__left-logo
                         .progress__left-stars
@@ -144,12 +144,12 @@ button.menu-btn menu
                             .progress__left-insurance
                                 .progress__left-bi(data-translate="bi") Страховка Ставки
                                 .progress__left-biPrize(data-translate="biExtreme") до 3 500 ₴
-                    .progress__left-bottom
-                        .progress__left-min(data-translate="minBetExtreme") Мінімальна ставка: від 1000 ₴
-                        button.progress__left-infoBtn.infoBtn._extreme(data-popup="levelExtreme")
+                        .progress__left-bottom
+                            .progress__left-min(data-translate="minBetExtreme") Мінімальна ставка: від 1000 ₴
+                            button.progress__left-infoBtn.infoBtn.info-icon._extreme.hide(data-popup="levelExtreme")
                 .progress__right
                     .progress__right-title(data-translate="progressHeadline") БІЛЬШЕ ВИГРАШНИХ СТАВОК ПОСПІЛЬ – БІЛЬШЕ БОНУС «СТРАХОВКА СТАВКИ»
-                    .progress__right-updated(data-translate="scaleUpdated") Твоя шкала оновилась: #[span.upd 21.01 16:30]
+                    .progress__right-updated(data-translate="scaleUpdated")
             .progress__bets._extreme
                 .progress__bets-item._fail
                     .progress__bets-status
@@ -194,9 +194,29 @@ button.menu-btn menu
                     a.progress__btnReal.btn-join(href="#")
                     .progress__btn.btn(data-translate="mainBtn") До гри
 
-            .progress__updated-mob(data-translate="scaleUpdated") Твоя шкала оновилась: #[span.upd 21.01 16:30]
-            .progress__txt(data-translate="levelsText") Роби від 3-х до 7 виграшних ставок поспіль (виключно типу «Ординар») на будь-які актуальні тенісні події з розділів «Спорт» та «LIVE» і отримай свій бонус.
+            .progress__updated-mob(data-translate="scaleUpdated")
+            .progress__txt._phase1(data-translate="levelsText1f")
+            .progress__txt._phase2.hide(data-translate="levelsText2f")
             a.progress__btn.btn.btn-join(data-translate="mainBtn" href="#") До гри
+
+            .drop._light.hide
+                details.progress__drop.dropdown
+                    summary(data-translate="detailsDrop")
+                    .drop-txt
+                        .drop-txt
+                            .drop-txt-list(data-translate="dropLight")
+            .drop._pro.hide
+                details.progress__drop.dropdown
+                    summary(data-translate="detailsDrop")
+                    .drop-txt
+                        .drop-txt
+                            .drop-txt-list(data-translate="dropPro")
+            .drop._extreme.hide
+                details.progress__drop.dropdown
+                    summary(data-translate="detailsDrop")
+                    .drop-txt
+                        .drop-txt
+                            .drop-txt-list(data-translate="dropExtreme")
 
             .drop
                 details.progress__drop.dropdown
@@ -204,13 +224,13 @@ button.menu-btn menu
                     .drop-txt
                         .drop-txt
                             .drop-txt-list.my-spins
+                                .no-spins.hide(data-translate="noBets") Ставки відсутні
                                 .spins-row
                                     .spins-row-head
                                         .content-date(data-translate="myBetDate") Дата
                                         .content-prize(data-translate="myBetPrize") Ставка
                                         .content-status(data-translate="myBetStatus") Статус
                                     .spins-row-scroll
-                                        .no-spins.hide(data-translate="noBets") Ставки відсутні
                                         .spins-row-item
                                             span.content-date 20.02
                                             span.content-prize ID: 388310247

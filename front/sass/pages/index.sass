@@ -208,6 +208,8 @@ body
       font-size: 40px
       line-height: 100%
       color: $text-light
+      align-self: center
+      text-align: center
       span
         display: inline-block
         font-family: inherit
@@ -283,8 +285,13 @@ body
       justify-content: flex-start
       align-items: center
       background: url("../img/levels/card-bg.png") no-repeat 50% 50%/contain
-      transition: background .5s ease-in-out
+      transition: background .5s ease-in-out, opacity .55s ease-out, transform .55s ease-out
       position: relative
+      opacity: 0
+      transform: translateY(24px) scale(.96)
+      &.showCard
+        opacity: 1
+        transform: translateY(0) scale(1)
       &:hover
         cursor: pointer
         background: url("../img/levels/card-bg-active.png") no-repeat 50% 50%/contain
@@ -569,6 +576,7 @@ body
         letter-spacing: 0.18px
         color: $accent-cyan
         font-size: 18px
+        white-space: nowrap
       &-bottom
         display: flex
         gap: 8px
@@ -609,6 +617,12 @@ body
       gap: 20px
       width: 100%
       justify-content: center
+      &.progress__bets--animate
+        .progress__bets-item
+          animation: progressBetAppear .55s ease-out forwards
+          @for $i from 1 through 7
+            &:nth-child(#{$i})
+              animation-delay: #{0.2 + $i * 0.12}s
       &._light
         .progress__bets-item
           &:nth-child(6), &:nth-child(7)
@@ -632,10 +646,8 @@ body
         border-radius: 6px
         background: url("../img/progress/progress-item.png") no-repeat 0 0/cover
         opacity: 0
-        animation: progressBetAppear .55s ease-out forwards
-        @for $i from 1 through 7
-          &:nth-child(#{$i})
-            animation-delay: #{0.2 + $i * 0.12}s
+        transform: scale(.92) translateY(8px)
+        transition: opacity .55s ease-out, transform .55s ease-out
         @media screen and (max-width: 600px)
           background: url("../img/progress/progress-item-mob.png") no-repeat 0 0/cover
         .progress__btn
@@ -1009,6 +1021,12 @@ body
           max-height: none
           min-height: 0
           overflow: visible
+        .no-spins
+          text-align: center
+          font-size: 16px
+          line-height: 22px
+          font-family: $font-text-regular
+          color: $text-gray
         &::-webkit-scrollbar
           width: 2px
           background: $text-gray
@@ -1021,6 +1039,11 @@ body
           line-height: 22px
           font-family: $font-text-regular
           color: $text-gray
+        strong
+          font-size: 16px
+          line-height: 22px
+          color: $text-gray
+          font-family: $font-text-bold
         ul > li
           padding-left: 20px
           position: relative
@@ -1213,6 +1236,10 @@ body
     justify-content: center
     text-align: center
     gap: 20px
+    &__top
+      display: flex
+      flex-direction: column
+      gap: 20px
     p
       font-family: $font-exo2-regular
       font-size: 12px
@@ -1297,6 +1324,8 @@ body
           padding-left: 18px
         li
           margin-bottom: 4px
+      &._active
+        display: block
     &._opacity
       pointer-events: none
     &._levelLight
@@ -1319,6 +1348,22 @@ body
         opacity: 1
         position: relative
         pointer-events: initial
+    .retreat1
+      p
+        padding-bottom: 0
+
+.choseHide
+  opacity: 0
+  transform: translateY(-18px)
+  pointer-events: none
+  transition: opacity .38s ease, transform .38s ease
+  .levels__card
+    transition: none
+
+.resultShow
+  display: flex
+  transition: all 1.2s ease-in-out
+  opacity: 1
 
 
 // iOS custom scrollbar
